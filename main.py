@@ -16,9 +16,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.MplWidget = MplWidget(self.MplWidget)
         self.cargar.clicked.connect(self.getCSV)
-        
         self.df = pd.read_csv('./data/covid_data.csv', parse_dates=['Country'], sep=',', na_values='')
-        
+        self.aux=[]
     def getCSV(self):
         
         paises = self.df['Country']
@@ -54,7 +53,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             print(e)     
             
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
