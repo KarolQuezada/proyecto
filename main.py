@@ -25,7 +25,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         fechas = self.df.loc['1/22/2020':'10/31/2020'].values[]
         col_names=self.df.columns.tolist()
         dat=pd.DataFrame(self.df)
-        
+        print(dat)
         print(len(col_names))
         for i in paises:
             self.listacountry.addItem(str(i))
